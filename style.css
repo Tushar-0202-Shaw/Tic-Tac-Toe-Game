@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(to right, #000000, #434343); /* Black gradient background */
+}
+
+.container {
+    text-align: center;
+    position: relative; /* For the winning line */
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 5px;
+    margin: 20px auto;
+    position: relative;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.cell:hover {
+    background-color: #f9f9f9;
+}
+
+.cell.glow {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.8); /* Yellow glow for cells */
+    background-color: #f9f9f9; /* Optional: change background color on click */
+}
+
+#message {
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: box-shadow 0.3s;
+}
+
+button.glow {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.8); /* Yellow glow for button */
+    background-color: #e0e0e0; /* Optional: change button background color on click */
+}
+
+/* Winning line */
+.winning-line {
+    position: absolute;
+    background-color: red;
+    height: 5px;
+    width: 0;
+    transition: width 0.5s ease;
+    transform-origin: left;
+}
